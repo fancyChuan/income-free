@@ -11,12 +11,15 @@ def initialize(context):
     # TODO 设置成交量比例函数:根据实际行情限制每个订单的成交量
     # TODO 对于每一笔订单，如果是市价单，成交量不超过：每日成交量×value；如果是限价单，限价单撮合时设定分价表中每一个价格的成交量的比例
     set_option('order_volume_radio', 0.25)
-    # TODO 设置是否开启盘口撮合模式函数，只对模拟盘生效
+    # TODO 设置是否开启盘口撮合模式函数，只对模拟盘生效。 这个什么含义？
     set_option('match_with_order_book', True)
     # 输出内容到日志 log.info()
     log.info('初始函数开始运行且全局只运行一次')
     # 过滤掉order系列API产生的比error级别低的log
     # log.set_level('order', 'error')
+
+    # TODO: 定时函数可以分为3种，分别是每日定时函数（run_daily）、每周定时函数（run_weekly）、每月定时函数（run_monthly）
+
 
     ### 股票相关设定 ###
     # 股票类每笔交易时的手续费是：买入时佣金万分之三，卖出时佣金万分之三加千分之一印花税, 每笔交易佣金最低扣5块钱
